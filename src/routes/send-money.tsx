@@ -18,6 +18,7 @@ const suggested = [
   { name: "Shirin Akter", number: "01911 ••• 208" },
 ];
 const quick = ["500", "1000", "2000"];
+const currentBalance = 12480;
 
 function SendMoney() {
   const [number, setNumber] = useState("");
@@ -62,6 +63,10 @@ function SendMoney() {
       <Field label="Amount (৳)">
         <TextInput type="number" value={amount} onChange={setAmount} placeholder="0" />
       </Field>
+      <div className="-mt-4 flex items-center justify-between rounded-xl bg-primary/5 px-4 py-3">
+        <span className="text-sm text-muted-foreground">Available balance</span>
+        <span className="font-bold text-foreground">৳ {currentBalance.toLocaleString("en-US")}.00</span>
+      </div>
       <div className="grid grid-cols-3 gap-3">
         {quick.map((q) => (
           <button

@@ -10,8 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiChatRouteImport } from './routes/ai-chat'
 import { Route as CashOutRouteImport } from './routes/cash-out'
+import { Route as GamesRouteImport } from './routes/games'
 import { Route as MerchantPayRouteImport } from './routes/merchant-pay'
+import { Route as MyQrRouteImport } from './routes/my-qr'
 import { Route as NearbyRouteImport } from './routes/nearby'
 import { Route as PayBillRouteImport } from './routes/pay-bill'
 import { Route as PointsRouteImport } from './routes/points'
@@ -24,14 +27,29 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiChatRoute = AiChatRouteImport.update({
+  id: '/ai-chat',
+  path: '/ai-chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CashOutRoute = CashOutRouteImport.update({
   id: '/cash-out',
   path: '/cash-out',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GamesRoute = GamesRouteImport.update({
+  id: '/games',
+  path: '/games',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MerchantPayRoute = MerchantPayRouteImport.update({
   id: '/merchant-pay',
   path: '/merchant-pay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MyQrRoute = MyQrRouteImport.update({
+  id: '/my-qr',
+  path: '/my-qr',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NearbyRoute = NearbyRouteImport.update({
@@ -67,8 +85,11 @@ const SpinRoute = SpinRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/cash-out': typeof CashOutRoute
+  '/games': typeof GamesRoute
   '/merchant-pay': typeof MerchantPayRoute
+  '/my-qr': typeof MyQrRoute
   '/nearby': typeof NearbyRoute
   '/pay-bill': typeof PayBillRoute
   '/points': typeof PointsRoute
@@ -78,8 +99,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/cash-out': typeof CashOutRoute
+  '/games': typeof GamesRoute
   '/merchant-pay': typeof MerchantPayRoute
+  '/my-qr': typeof MyQrRoute
   '/nearby': typeof NearbyRoute
   '/pay-bill': typeof PayBillRoute
   '/points': typeof PointsRoute
@@ -90,8 +114,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-chat': typeof AiChatRoute
   '/cash-out': typeof CashOutRoute
+  '/games': typeof GamesRoute
   '/merchant-pay': typeof MerchantPayRoute
+  '/my-qr': typeof MyQrRoute
   '/nearby': typeof NearbyRoute
   '/pay-bill': typeof PayBillRoute
   '/points': typeof PointsRoute
@@ -103,8 +130,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ai-chat'
     | '/cash-out'
+    | '/games'
     | '/merchant-pay'
+    | '/my-qr'
     | '/nearby'
     | '/pay-bill'
     | '/points'
@@ -114,8 +144,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ai-chat'
     | '/cash-out'
+    | '/games'
     | '/merchant-pay'
+    | '/my-qr'
     | '/nearby'
     | '/pay-bill'
     | '/points'
@@ -125,8 +158,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/ai-chat'
     | '/cash-out'
+    | '/games'
     | '/merchant-pay'
+    | '/my-qr'
     | '/nearby'
     | '/pay-bill'
     | '/points'
@@ -137,8 +173,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiChatRoute: typeof AiChatRoute
   CashOutRoute: typeof CashOutRoute
+  GamesRoute: typeof GamesRoute
   MerchantPayRoute: typeof MerchantPayRoute
+  MyQrRoute: typeof MyQrRoute
   NearbyRoute: typeof NearbyRoute
   PayBillRoute: typeof PayBillRoute
   PointsRoute: typeof PointsRoute
@@ -156,6 +195,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-chat': {
+      id: '/ai-chat'
+      path: '/ai-chat'
+      fullPath: '/ai-chat'
+      preLoaderRoute: typeof AiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cash-out': {
       id: '/cash-out'
       path: '/cash-out'
@@ -163,11 +209,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CashOutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/games': {
+      id: '/games'
+      path: '/games'
+      fullPath: '/games'
+      preLoaderRoute: typeof GamesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/merchant-pay': {
       id: '/merchant-pay'
       path: '/merchant-pay'
       fullPath: '/merchant-pay'
       preLoaderRoute: typeof MerchantPayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-qr': {
+      id: '/my-qr'
+      path: '/my-qr'
+      fullPath: '/my-qr'
+      preLoaderRoute: typeof MyQrRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nearby': {
@@ -217,8 +277,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiChatRoute: AiChatRoute,
   CashOutRoute: CashOutRoute,
+  GamesRoute: GamesRoute,
   MerchantPayRoute: MerchantPayRoute,
+  MyQrRoute: MyQrRoute,
   NearbyRoute: NearbyRoute,
   PayBillRoute: PayBillRoute,
   PointsRoute: PointsRoute,

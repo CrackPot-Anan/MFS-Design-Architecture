@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ScanLine } from "lucide-react";
 import { Avatar, Field, GoldButton, Screen, TextInput } from "@/components/app-shell";
 
 export const Route = createFileRoute("/merchant-pay")({
@@ -27,6 +28,14 @@ function MerchantPay() {
       <Field label="Merchant code">
         <TextInput value={code} onChange={setCode} placeholder="Enter code or scan QR" />
       </Field>
+
+      <button
+        type="button"
+        className="-mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-primary bg-primary/5 py-3 font-semibold text-primary transition-colors hover:bg-primary/10"
+      >
+        <ScanLine className="h-5 w-5" />
+        Scan QR
+      </button>
 
       <section>
         <h2 className="text-base font-bold text-foreground">Frequent merchants</h2>

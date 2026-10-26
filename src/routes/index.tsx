@@ -8,6 +8,7 @@ import {
   Gift,
   Gamepad2,
   Target,
+  Banknote,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -25,9 +26,10 @@ const tiles = [
   { label: "Send Money", icon: Send, to: "/send-money" },
   { label: "Pay Bill", icon: ReceiptText, to: "/pay-bill" },
   { label: "Add Money", icon: Plus },
+  { label: "Cash Out", icon: Banknote, to: "/cash-out" },
   { label: "My Points", icon: Star, to: "/points" },
   { label: "Redeem", icon: Gift, to: "/points" },
-  { label: "Games", icon: Gamepad2 },
+  { label: "Games", icon: Gamepad2, to: "/games" },
   { label: "Spin & Win", icon: Target, to: "/spin" },
 ];
 
