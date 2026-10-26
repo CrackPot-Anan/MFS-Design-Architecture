@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppHeader } from "@/components/app-shell";
+import { FileCheck2, TreePine } from "lucide-react";
 
 export const Route = createFileRoute("/points")({
   head: () => ({
@@ -37,6 +38,24 @@ function Points() {
             1,530 from transactions · 920 from spins & bonus
           </p>
         </div>
+
+        <section className="rounded-2xl border border-border bg-card p-4">
+          <h2 className="font-bold text-foreground">Your paperless impact</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Your digital payments help reduce paper use.</p>
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="rounded-xl bg-primary/5 p-3">
+              <FileCheck2 className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-2xl font-extrabold text-foreground">128</p>
+              <p className="text-xs text-muted-foreground">Paper bills saved</p>
+            </div>
+            <div className="rounded-xl bg-primary/5 p-3">
+              <TreePine className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-2xl font-extrabold text-foreground">2</p>
+              <p className="text-xs text-muted-foreground">Trees saved</p>
+            </div>
+          </div>
+          <p className="mt-3 text-[11px] text-muted-foreground">Estimated demo impact from paperless bill payments.</p>
+        </section>
 
         <section>
           <h2 className="text-base font-bold text-foreground">Points gained by transaction</h2>

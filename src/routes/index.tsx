@@ -48,7 +48,7 @@ function Index() {
         <div className="flex items-start justify-between">
           <div>
             <p className="text-sm opacity-80">Welcome back</p>
-            <p className="text-xl font-bold">Abrar Anand</p>
+            <p className="text-xl font-bold">Abrar Anan</p>
           </div>
           <p className="text-lg font-extrabold tracking-tight">
             BS23<span className="text-gold">MFS</span>

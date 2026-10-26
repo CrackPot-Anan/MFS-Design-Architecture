@@ -57,7 +57,7 @@ function MyQr() {
             </svg>
           </div>
 
-          <p className="mt-5 font-semibold text-[#1D2B26]">Abrar Anand</p>
+          <p className="mt-5 font-semibold text-[#1D2B26]">Abrar Anan</p>
           <p className="mt-1 text-sm text-[#5A6A64]">BS23MFS Wallet</p>
           <p className="mt-6 text-xs text-[#5A6A64]">This QR code is a random visual mockup.</p>
         </section>
