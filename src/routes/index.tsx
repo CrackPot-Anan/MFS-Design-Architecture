@@ -9,6 +9,7 @@ import {
   Gamepad2,
   Target,
   Banknote,
+  ChartNoAxesCombined,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -25,12 +26,13 @@ const tiles = [
   { label: "Merchant Pay", icon: CreditCard, to: "/merchant-pay" },
   { label: "Send Money", icon: Send, to: "/send-money" },
   { label: "Pay Bill", icon: ReceiptText, to: "/pay-bill" },
-  { label: "Add Money", icon: Plus },
+  { label: "Add Money", icon: Plus, to: "/add-money" },
   { label: "Cash Out", icon: Banknote, to: "/cash-out" },
   { label: "My Points", icon: Star, to: "/points" },
-  { label: "Redeem", icon: Gift, to: "/points" },
+  { label: "Redeem", icon: Gift, to: "/redeem" },
   { label: "Games", icon: Gamepad2, to: "/games" },
   { label: "Spin & Win", icon: Target, to: "/spin" },
+  { label: "Expense Tracker", icon: ChartNoAxesCombined, to: "/expense-tracker" },
 ];
 
 const activity = [

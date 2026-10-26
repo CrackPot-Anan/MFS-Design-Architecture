@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppHeader } from "@/components/app-shell";
 
 export const Route = createFileRoute("/points")({
@@ -68,9 +68,9 @@ function Points() {
                   <p className="font-semibold text-foreground">{p.name}</p>
                   <p className="text-sm text-muted-foreground">{p.offer}</p>
                 </div>
-                <button className="rounded-lg bg-gold px-4 py-2 text-sm font-bold text-gold-foreground transition-colors hover:bg-gold/90">
+                <Link to="/redeem" className="rounded-lg bg-gold px-4 py-2 text-sm font-bold text-gold-foreground transition-colors hover:bg-gold/90">
                   Redeem
-                </button>
+                </Link>
               </li>
             ))}
           </ul>

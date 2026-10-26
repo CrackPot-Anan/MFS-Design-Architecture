@@ -19,10 +19,12 @@ const suggested = [
 ];
 const quick = ["500", "1000", "2000"];
 const currentBalance = 12480;
+const purposes = ["Family support", "Rent", "Bills", "Groceries", "Dining", "Other"];
 
 function SendMoney() {
   const [number, setNumber] = useState("");
   const [amount, setAmount] = useState("");
+  const [purpose, setPurpose] = useState("");
 
   return (
     <Screen title="Send Money">
@@ -63,6 +65,22 @@ function SendMoney() {
       <Field label="Amount (৳)">
         <TextInput type="number" value={amount} onChange={setAmount} placeholder="0" />
       </Field>
+      <Field label="Purpose of payment">
+        <TextInput value={purpose} onChange={setPurpose} placeholder="e.g. Rent, family support" />
+      </Field>
+      <div className="-mt-4 flex flex-wrap gap-2" aria-label="Common payment purposes">
+        {purposes.map((item) => (
+          <button
+            key={item}
+            type="button"
+            onClick={() => setPurpose(item)}
+            aria-pressed={purpose === item}
+            className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${purpose === item ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground hover:bg-accent"}`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
       <div className="-mt-4 flex items-center justify-between rounded-xl bg-primary/5 px-4 py-3">
         <span className="text-sm text-muted-foreground">Available balance</span>
         <span className="font-bold text-foreground">৳ {currentBalance.toLocaleString("en-US")}.00</span>

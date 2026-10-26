@@ -18,10 +18,12 @@ const suggested = [
   { name: "Pizza Corner", sub: "Gulshan · Restaurant" },
   { name: "City Pharmacy", sub: "Banani · Health" },
 ];
+const purposes = ["Groceries", "Dining", "Shopping", "Bills", "Health", "Other"];
 
 function MerchantPay() {
   const [code, setCode] = useState("");
   const [amount, setAmount] = useState("");
+  const [purpose, setPurpose] = useState("");
 
   return (
     <Screen title="Merchant Pay">
@@ -75,6 +77,22 @@ function MerchantPay() {
       <Field label="Amount (৳)">
         <TextInput type="number" value={amount} onChange={setAmount} placeholder="0" />
       </Field>
+      <Field label="Purpose of payment">
+        <TextInput value={purpose} onChange={setPurpose} placeholder="e.g. Groceries, dining" />
+      </Field>
+      <div className="-mt-4 flex flex-wrap gap-2" aria-label="Common payment purposes">
+        {purposes.map((item) => (
+          <button
+            key={item}
+            type="button"
+            onClick={() => setPurpose(item)}
+            aria-pressed={purpose === item}
+            className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${purpose === item ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-foreground hover:bg-accent"}`}
+          >
+            {item}
+          </button>
+        ))}
+      </div>
 
       <p className="rounded-xl bg-gold/20 px-4 py-3 text-sm text-gold-foreground">
         You will earn points on this payment
