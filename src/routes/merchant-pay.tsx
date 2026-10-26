@@ -7,7 +7,7 @@ export const Route = createFileRoute("/merchant-pay")({
   head: () => ({
     meta: [
       { title: "Merchant Pay – BS23MFS" },
-      { name: "description", content: "Pay merchants by code or QR and earn points." },
+      { name: "description", content: "Pay merchants by mobile number or QR and earn points." },
     ],
   }),
   component: MerchantPay,
@@ -21,14 +21,14 @@ const suggested = [
 const purposes = ["Groceries", "Dining", "Shopping", "Bills", "Health", "Other"];
 
 function MerchantPay() {
-  const [code, setCode] = useState("");
+  const [mobileNumber, setMobileNumber] = useState("");
   const [amount, setAmount] = useState("");
   const [purpose, setPurpose] = useState("");
 
   return (
     <Screen title="Merchant Pay">
-      <Field label="Merchant code">
-        <TextInput value={code} onChange={setCode} placeholder="Enter code or scan QR" />
+      <Field label="Merchant mobile number">
+        <TextInput type="tel" value={mobileNumber} onChange={setMobileNumber} placeholder="01XXXXXXXXX" />
       </Field>
 
       <button
